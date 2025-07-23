@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import {
   Download,
-  BookOpen,
   Award,
-  Code,
   GraduationCap,
   User,
   Trophy,
   Star,
-  Target,
-  ChevronRight,
+  FileText,
+  Eye,
+  X,
 } from "lucide-react";
 
 function About({ isDarkMode = true }) {
   const [activeTab, setActiveTab] = useState("education");
+  const [showResumeModal, setShowResumeModal] = useState(false);
 
   const tabs = [
     { id: "education", label: "Education", icon: <GraduationCap size={16} /> },
     { id: "personal", label: "Personal Details", icon: <User size={16} /> },
+    { id: "resume", label: "Resume", icon: <FileText size={16} /> },
   ];
 
   const technicalSkills = ["Java", "Python", "Full Stack", "Data Structures"];
@@ -35,23 +36,19 @@ function About({ isDarkMode = true }) {
     },
   ];
 
-  // const interests = [
-  //   {
-  //     icon: <Code size={16} />,
-  //     text: "Full Stack Development",
-  //     desc: "Building scalable web applications with modern technologies",
-  //   },
-  //   {
-  //     icon: <BookOpen size={16} />,
-  //     text: "Machine Learning",
-  //     desc: "Exploring AI algorithms and data science methodologies",
-  //   },
-  //   {
-  //     icon: <Target size={16} />,
-  //     text: "Problem Solving",
-  //     desc: "Competitive programming and algorithmic thinking",
-  //   },
-  // ];
+  const handleDownloadResume = () => {
+    // This will download the resume from the public folder
+    const link = document.createElement("a");
+    link.href = "/Resume2.pdf"; // Assuming you'll place your resume as resume.pdf in public folder
+    link.download = "Vijaya_Giduthuri_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleViewResume = () => {
+    setShowResumeModal(true);
+  };
 
   return (
     <div
@@ -203,50 +200,53 @@ function About({ isDarkMode = true }) {
               </div>
             </div>
           </div>
-          <div
-            className={`relative flex p-0.5 rounded-xl mb-6 w-fit mx-auto ${
-              isDarkMode
-                ? "bg-gray-800/90 border border-gray-700/50 backdrop-blur-xl"
-                : "bg-white/90 border border-gray-200/50 shadow-xl backdrop-blur-xl"
-            }`}
-          >
+
+          <div className="flex justify-center">
             <div
-              className={`absolute top-0.5 bottom-0.5 rounded-lg transition-all duration-500 ease-out shadow-lg ${
+              className={`relative flex p-0.5 rounded-xl mb-6 w-4xl max-w-none${
                 isDarkMode
-                  ? "bg-gradient-to-r from-purple-400 to-purple-900"
-                  : "bg-gradient-to-r from-purple-400 to-purple-900"
+                  ? "bg-gray-800/90 border border-gray-700/50 backdrop-blur-xl"
+                  : "bg-white/90 border border-gray-200/50 shadow-xl backdrop-blur-xl"
               }`}
-              style={{
-                left: `${
-                  tabs.findIndex((tab) => tab.id === activeTab) *
-                  (100 / tabs.length)
-                }%`,
-                width: `${100 / tabs.length}%`,
-              }}
-            />
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`relative flex items-center gap-2 px-40 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? "text-white transform scale-105"
-                    : isDarkMode
-                    ? "text-gray-300 hover:text-white hover:scale-102"
-                    : "text-gray-600 hover:text-gray-900 hover:scale-102"
+            >
+              <div
+                className={`absolute top-0.5 bottom-0.5 rounded-lg transition-all duration-500 ease-out shadow-lg ${
+                  isDarkMode
+                    ? "bg-gradient-to-r from-purple-400 to-purple-900"
+                    : "bg-gradient-to-r from-purple-400 to-purple-900"
                 }`}
-              >
-                <span className="text-base">{tab.icon}</span>
-                <span className="whitespace-nowrap text-xs sm:text-sm">
-                  {tab.label}
-                </span>
-              </button>
-            ))}
+                style={{
+                  left: `${
+                    tabs.findIndex((tab) => tab.id === activeTab) *
+                    (100 / tabs.length)
+                  }%`,
+                  width: `${100 / tabs.length}%`,
+                }}
+              />
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`relative flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 flex-1 ${
+                    activeTab === tab.id
+                      ? "text-white transform scale-105"
+                      : isDarkMode
+                      ? "text-gray-300 hover:text-white hover:scale-102"
+                      : "text-gray-600 hover:text-gray-900 hover:scale-102"
+                  }`}
+                >
+                  <span className="text-base">{tab.icon}</span>
+                  <span className="whitespace-nowrap text-xs sm:text-sm">
+                    {tab.label}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Tab Content - Compact Left-Aligned Version */}
+          {/* Tab Content */}
           <div
-            className={`inline-block rounded-3xl border backdrop-blur-lg transition-all duration-500 ${
+            className={`w-full rounded-3xl border backdrop-blur-lg transition-all duration-500 ${
               isDarkMode
                 ? "bg-black/40 border-purple-500/20"
                 : "bg-white/80 border-purple-200"
@@ -397,31 +397,6 @@ function About({ isDarkMode = true }) {
                     </div>
                   </div>
                 </div>
-
-                {/* Resume Download Button - Centered */}
-                {/* <div className="pt-4 border-t border-purple-500/20 flex justify-center">
-                  <button
-                    className="inline-flex items-center space-x-2 py-2 px-4 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] group"
-                    style={{
-                      backgroundColor: isDarkMode
-                        ? "rgba(0,0,0,0.7)"
-                        : "#7c3aed",
-                      color: isDarkMode ? "#C084FC" : "#ffffff",
-                      border: isDarkMode
-                        ? "2px solid #A855F7"
-                        : "2px solid #7c3aed",
-                      boxShadow: isDarkMode
-                        ? "0 0 15px 2px rgba(168, 85, 247, 0.4)"
-                        : "0 0 15px 2px rgba(124, 58, 237, 0.4)",
-                    }}
-                  >
-                    <Download
-                      size={16}
-                      className="group-hover:animate-bounce"
-                    />
-                    <span>Download Resume</span>
-                  </button>
-                </div> */}
               </div>
             )}
 
@@ -489,114 +464,230 @@ function About({ isDarkMode = true }) {
                   </div>
                 </div>
 
-                {/* Achievements and Interests Side by Side */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Achievements Section - Compact */}
-                  <div>
-                    <h4
-                      className={`text-sm font-bold mb-3 ${
-                        isDarkMode ? "text-purple-300" : "text-purple-800"
-                      }`}
-                    >
-                      Key Achievements
-                    </h4>
-                    <div className="space-y-2">
-                      {achievements.map((achievement, index) => (
-                        <div key={index} className="flex items-start space-x-3">
-                          <div className="flex flex-col items-center mt-1">
+                {/* Achievements */}
+                <div>
+                  <h4
+                    className={`text-sm font-bold mb-3 ${
+                      isDarkMode ? "text-purple-300" : "text-purple-800"
+                    }`}
+                  >
+                    Key Achievements
+                  </h4>
+                  <div className="space-y-2">
+                    {achievements.map((achievement, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="flex flex-col items-center mt-1">
+                          <div
+                            className={`w-1.5 h-1.5 rounded-full ${
+                              isDarkMode ? "bg-purple-400" : "bg-purple-600"
+                            }`}
+                          />
+                          {index < achievements.length - 1 && (
                             <div
-                              className={`w-1.5 h-1.5 rounded-full ${
-                                isDarkMode ? "bg-purple-400" : "bg-purple-600"
+                              className={`w-px h-8 ${
+                                isDarkMode
+                                  ? "bg-purple-500/30"
+                                  : "bg-purple-400/30"
                               }`}
                             />
-                            {index < achievements.length - 1 && (
-                              <div
-                                className={`w-px h-8 ${
-                                  isDarkMode
-                                    ? "bg-purple-500/30"
-                                    : "bg-purple-400/30"
-                                }`}
-                              />
-                            )}
-                          </div>
-                          <div className="flex-1 pb-2">
-                            <h5
-                              className={`text-sm font-bold tracking-tight mb-0.5 ${
-                                isDarkMode ? "text-white" : "text-gray-900"
-                              }`}
-                            >
-                              {achievement.title}
-                            </h5>
-                            <p
-                              className={`text-xs ${
-                                isDarkMode
-                                  ? "text-purple-300"
-                                  : "text-purple-600"
-                              }`}
-                            >
-                              {achievement.desc}
-                            </p>
-                          </div>
+                          )}
                         </div>
-                      ))}
-                    </div>
+                        <div className="flex-1 pb-2">
+                          <h5
+                            className={`text-sm font-bold tracking-tight mb-0.5 ${
+                              isDarkMode ? "text-white" : "text-gray-900"
+                            }`}
+                          >
+                            {achievement.title}
+                          </h5>
+                          <p
+                            className={`text-xs ${
+                              isDarkMode ? "text-purple-300" : "text-purple-600"
+                            }`}
+                          >
+                            {achievement.desc}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
+                </div>
+              </div>
+            )}
 
-                  {/* Interests & Passions - Compact */}
-                  {/* <div>
-                    <h4
-                      className={`text-sm font-bold mb-3 ${
-                        isDarkMode ? "text-purple-300" : "text-purple-800"
-                      }`}
-                    >
-                      Interests & Passions
-                    </h4>
-                    <div className="space-y-2">
-                      {interests.map((interest, index) => (
-                        <div key={index} className="flex items-start space-x-3">
-                          <div className="flex flex-col items-center mt-1">
-                            <div
-                              className={`w-1.5 h-1.5 rounded-full ${
-                                isDarkMode ? "bg-purple-400" : "text-purple-600"
-                              }`}
-                            />
-                            {index < interests.length - 1 && (
-                              <div
-                                className={`w-px h-8 ${
-                                  isDarkMode
-                                    ? "bg-purple-500/30"
-                                    : "bg-purple-400/30"
-                                }`}
-                              />
-                            )}
-                          </div>
-                          <div className="flex-1 pb-2">
-                            <h5
-                              className={`text-sm font-bold tracking-tight mb-0.5 ${
-                                isDarkMode ? "text-white" : "text-gray-900"
-                              }`}
-                            >
-                              {interest.text}
-                            </h5>
-                            <p
-                              className={`text-xs ${
-                                isDarkMode
-                                  ? "text-purple-300"
-                                  : "text-purple-600"
-                              }`}
-                            >
-                              {interest.desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div> */}
+            {activeTab === "resume" && (
+              <div className="p-6 space-y-4 w-full">
+                <div className="flex items-center space-x-3 mb-4">
+                  <FileText
+                    size={20}
+                    className={
+                      isDarkMode ? "text-purple-400" : "text-purple-600"
+                    }
+                  />
+                  <h3
+                    className={`text-lg font-bold ${
+                      isDarkMode ? "text-purple-300" : "text-purple-800"
+                    }`}
+                  >
+                    Resume
+                  </h3>
+                </div>
+
+                {/* Resume Section - Full Width, Fixed Height (4-5 inches) */}
+                <div
+                  className={`w-full rounded-lg border overflow-hidden ${
+                    isDarkMode
+                      ? "border-purple-500/30 bg-gray-800/50"
+                      : "border-purple-200 bg-white"
+                  }`}
+                  style={{
+                    height: "320px", // ~4-5 inches
+                    boxShadow: isDarkMode
+                      ? "0 8px 25px rgba(139, 92, 246, 0.2)"
+                      : "0 8px 25px rgba(124, 58, 237, 0.15)",
+                  }}
+                >
+                  <iframe
+                    src="/Resume2.pdf"
+                    className="w-full h-full"
+                    title="Resume Preview"
+                    style={{
+                      border: "none",
+                      overflow: "hidden",
+                    }}
+                  />
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex space-x-4 pt-6">
+                  <button
+                    onClick={handleViewResume}
+                    className="inline-flex items-center space-x-2 py-3 px-6 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] group"
+                    style={{
+                      backgroundColor: isDarkMode
+                        ? "rgba(0,0,0,0.7)"
+                        : "#7c3aed",
+                      color: isDarkMode ? "#C084FC" : "#ffffff",
+                      border: isDarkMode
+                        ? "2px solid #A855F7"
+                        : "2px solid #7c3aed",
+                      boxShadow: isDarkMode
+                        ? "0 0 15px 2px rgba(168, 85, 247, 0.4)"
+                        : "0 0 15px 2px rgba(124, 58, 237, 0.4)",
+                    }}
+                  >
+                    <Eye
+                      size={16}
+                      className="group-hover:scale-110 transition-transform"
+                    />
+                    <span>View</span>
+                  </button>
+
+                  <button
+                    onClick={handleDownloadResume}
+                    className="inline-flex items-center space-x-2 py-3 px-6 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] group"
+                    style={{
+                      backgroundColor: isDarkMode
+                        ? "rgba(139, 92, 246, 0.2)"
+                        : "#f3e8ff",
+                      color: isDarkMode ? "#C084FC" : "#7c3aed",
+                      border: isDarkMode
+                        ? "2px solid #A855F7"
+                        : "2px solid #7c3aed",
+                    }}
+                  >
+                    <Download
+                      size={16}
+                      className="group-hover:animate-bounce"
+                    />
+                    <span>Download</span>
+                  </button>
                 </div>
               </div>
             )}
           </div>
         </div>
+
+        {/* Resume Modal */}
+        {showResumeModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+            <div
+              className={`relative w-full max-w-4xl h-[90vh] rounded-2xl border overflow-hidden ${
+                isDarkMode
+                  ? "bg-gray-900 border-purple-500/30"
+                  : "bg-white border-purple-200"
+              }`}
+              style={{
+                boxShadow: isDarkMode
+                  ? "0 25px 50px rgba(139, 92, 246, 0.3)"
+                  : "0 25px 50px rgba(124, 58, 237, 0.3)",
+              }}
+            >
+              {/* Modal Header */}
+              <div
+                className={`flex items-center justify-between p-4 border-b ${
+                  isDarkMode
+                    ? "border-purple-500/30 bg-gray-800/50"
+                    : "border-purple-200 bg-purple-50/50"
+                }`}
+              >
+                <div className="flex items-center space-x-3">
+                  <FileText
+                    size={20}
+                    className={
+                      isDarkMode ? "text-purple-400" : "text-purple-600"
+                    }
+                  />
+                  <h3
+                    className={`text-lg font-bold ${
+                      isDarkMode ? "text-purple-300" : "text-purple-800"
+                    }`}
+                  >
+                    Resume
+                  </h3>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <button
+                    onClick={handleDownloadResume}
+                    className={`p-2 rounded-lg transition-all duration-200 hover:scale-105 ${
+                      isDarkMode
+                        ? "hover:bg-purple-600/20 text-purple-400 hover:text-purple-300"
+                        : "hover:bg-purple-100 text-purple-600 hover:text-purple-700"
+                    }`}
+                    title="Download Resume"
+                  >
+                    <Download size={18} />
+                  </button>
+                  <button
+                    onClick={() => setShowResumeModal(false)}
+                    className={`p-2 rounded-lg transition-all duration-200 hover:scale-105 ${
+                      isDarkMode
+                        ? "hover:bg-red-600/20 text-red-400 hover:text-red-300"
+                        : "hover:bg-red-100 text-red-600 hover:text-red-700"
+                    }`}
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Modal Content - Resume Preview */}
+              <div className="flex-1 overflow-hidden">
+                <div className="h-full overflow-auto">
+                  <iframe
+                    src="/Resume2.pdf"
+                    className="w-full min-h-full"
+                    title="Resume Preview"
+                    style={{
+                      border: "none",
+                      height: "calc(90vh - 80px)", // Subtract header height
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       <style>{`

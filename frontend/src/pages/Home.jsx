@@ -578,7 +578,7 @@ function Home() {
 
         {/* Empty Sections*/}
         <section id="about">
-          <About />
+          <About isDarkMode={isDarkMode} />
         </section>
         {/* <section id="projects" className="h-20"></section>
         <section id="skills" className="h-20"></section>
