@@ -307,6 +307,9 @@
 import React, { useState } from "react";
 import { Sun, Moon, Github, Linkedin } from "lucide-react";
 import About from "./About";
+import Projects from "./Projects";
+import Skills from "./Skills";
+import Contact from "./Contact";
 
 function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -580,9 +583,15 @@ function Home() {
         <section id="about">
           <About isDarkMode={isDarkMode} />
         </section>
-        {/* <section id="projects" className="h-20"></section>
-        <section id="skills" className="h-20"></section>
-        <section id="contact" className="h-20"></section> */}
+        <section id="projects">
+          <Projects isDarkMode={isDarkMode} />
+        </section>
+        <section id="skills">
+          <Skills isDarkMode={isDarkMode} />
+        </section>
+        <section id="contact">
+          <Contact isDarkMode={isDarkMode} />
+        </section>
       </main>
 
       <style>{`
