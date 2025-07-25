@@ -189,48 +189,10 @@ function Contact({ isDarkMode = true }) {
                               isDarkMode ? "text-white" : "text-purple-900"
                             }`}
                           >
-                            vijaya@example.com
+                            vijayagiduthuri2@gmail.com
                           </p>
                         </div>
                       </div>
-
-                      <div className="flex items-center space-x-4">
-                        <div
-                          className="w-12 h-12 rounded-full flex items-center justify-center"
-                          style={{
-                            backgroundColor: isDarkMode ? "#000" : "#fff",
-                            border: "1.5px solid",
-                            borderColor: isDarkMode ? "#A855F7" : "#7c3aed",
-                            boxShadow: isDarkMode
-                              ? "0 0 12px 4px rgba(168, 85, 247, 0.6)"
-                              : "0 0 12px 4px rgba(124, 58, 237, 0.4)",
-                          }}
-                        >
-                          <Phone
-                            size={20}
-                            color={isDarkMode ? "#ffffff" : "#7c3aed"}
-                          />
-                        </div>
-                        <div>
-                          <p
-                            className={`text-sm ${
-                              isDarkMode
-                                ? "text-purple-100/80"
-                                : "text-purple-900/80"
-                            }`}
-                          >
-                            Phone
-                          </p>
-                          <p
-                            className={`font-medium ${
-                              isDarkMode ? "text-white" : "text-purple-900"
-                            }`}
-                          >
-                            +91 9876543210
-                          </p>
-                        </div>
-                      </div>
-
                       <div className="flex items-center space-x-4">
                         <div
                           className="w-12 h-12 rounded-full flex items-center justify-center"
