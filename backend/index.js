@@ -6,7 +6,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 9000;
-const frontendURL = "https://vijaya-portfolio.vercel.app/";
+const frontendURL = "https://vijaya-portfolio.vercel.app";
 app.use(
   cors({
     origin: frontendURL,
