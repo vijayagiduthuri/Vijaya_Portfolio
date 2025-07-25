@@ -12,8 +12,6 @@ node_modules
 dist
 dist-ssr
 *.local
-/frontend/public/Vijaya.jpg
-/frontend/public/Vijaya.png
 
 
 # Editor directories and files
