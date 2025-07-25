@@ -321,6 +321,13 @@ function Home() {
     if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleGetInTouch = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       className="min-h-screen transition-all duration-500"
@@ -509,6 +516,7 @@ function Home() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4">
                 {/* Get in Touch Button */}
                 <button
+                  onClick={handleGetInTouch}
                   className="relative px-8 py-3 rounded-xl font-semibold border text-base transition-all duration-300 hover:scale-105"
                   style={{
                     backgroundColor: isDarkMode ? "rgba(0,0,0,0.7)" : "#7c3aed", // purple bg in light mode

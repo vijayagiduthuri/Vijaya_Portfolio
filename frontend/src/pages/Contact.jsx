@@ -21,7 +21,10 @@ function Contact({ isDarkMode = true }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://vijaya-portfolio-5c6n.vercel.app/api/send-email", formData);
+      await axios.post(
+        "https://vijaya-portfolio-5c6n.vercel.app/api/send-email",
+        formData
+      );
       alert("Message sent successfully!");
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
