@@ -6,8 +6,13 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 9000;
-
-app.use(cors());
+const frontendURL = "https://vijaya-portfolio.vercel.app/";
+app.use(
+  cors({
+    origin: frontendURL,
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.post("/api/send-email", async (req, res) => {
