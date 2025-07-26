@@ -22,7 +22,7 @@ function Contact({ isDarkMode = true }) {
     e.preventDefault();
     try {
       await axios.post(
-        "https://vijaya-portfolio-5c6n.vercel.app/api/send-email",
+        "https://vijaya-portfolio.onrender.com/api/send-email",
         formData
       );
       alert("Message sent successfully!");
