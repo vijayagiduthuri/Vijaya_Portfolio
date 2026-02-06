@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: ["http://localhost:5173", "https://vijaya-portfolio.onrender.com"],
+    origin: ["http://localhost:5173", "https://vijaya-portfolio.onrender.com","https://22l5smv2-5173.inc1.devtunnels.ms/"],
     credentials: true
 }));
 

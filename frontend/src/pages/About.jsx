@@ -738,8 +738,23 @@ function About({ isDarkMode = true }) {
   const achievements = [
     {
       icon: <Trophy size={16} />,
+      title: "HackOverflow-2k25 National Hackathon",
+      desc: "Secured Runner-Up position among 50+ teams.",
+    },
+    {
+      icon: <Trophy size={16} />,
+      title: "Amaravathi Quantum Valley Hackathon",
+      desc: "Secured 3rd place in internal hackathon.",
+    },
+    {
+      icon: <Trophy size={16} />,
+      title: "SIH 2025 Internal Hackathon",
+      desc: "Shortlisted among 300+ teams.",
+    },
+    {
+      icon: <Trophy size={16} />,
       title: "Vedic Vision Hackathon 2k24",
-      desc: "Awarded a special category prize in a college-level hackathon among 40+ teams.",
+      desc: "Awarded a special category prize in a college-level hackathon.",
     },
     {
       icon: <Award size={16} />,
@@ -1185,7 +1200,7 @@ function About({ isDarkMode = true }) {
                   >
                     Key Achievements
                   </h4>
-                  <div className="space-y-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
                     {achievements.map((achievement, index) => (
                       <div key={index} className="flex items-start space-x-3">
                         <div className="flex flex-col items-center mt-1">
@@ -1194,15 +1209,6 @@ function About({ isDarkMode = true }) {
                               isDarkMode ? "bg-purple-400" : "bg-purple-600"
                             }`}
                           />
-                          {index < achievements.length - 1 && (
-                            <div
-                              className={`w-px h-8 ${
-                                isDarkMode
-                                  ? "bg-purple-500/30"
-                                  : "bg-purple-400/30"
-                              }`}
-                            />
-                          )}
                         </div>
                         <div className="flex-1 pb-2">
                           <h5

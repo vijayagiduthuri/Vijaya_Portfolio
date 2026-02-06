@@ -122,10 +122,10 @@ function Contact({ isDarkMode = true }) {
           />
         </div>
 
-        <section id="contact" className="py-16 px-6 relative z-10">
-          <div className="max-w-6xl mx-auto">
+        <section id="contact" className="py-12 px-6 relative z-10">
+          <div className="max-w-5xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <h2
                 className={`mt-6 text-3xl md:text-4xl font-bold mb-2 ${
                   isDarkMode ? "text-transparent" : "text-purple-900"
@@ -160,7 +160,7 @@ function Contact({ isDarkMode = true }) {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            <div className="grid lg:grid-cols-2 gap-6 items-stretch">
               {/* Left Section - Contact Information */}
               <div className="flex">
                 <div
@@ -185,9 +185,9 @@ function Contact({ isDarkMode = true }) {
                       : `0 0 8px 2px #8B5CF620`;
                   }}
                 >
-                  <div className="p-6 pb-4">
+                  <div className="p-5 pb-3">
                     <h3
-                      className={`text-xl font-bold mb-6 ${
+                      className={`text-lg font-bold mb-4 ${
                         isDarkMode ? "text-white" : "text-purple-900"
                       }`}
                     >
@@ -195,10 +195,10 @@ function Contact({ isDarkMode = true }) {
                     </h3>
 
                     {/* Contact Details */}
-                    <div className="space-y-6">
-                      <div className="flex items-center space-x-4">
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-3">
                         <div
-                          className="w-12 h-12 rounded-full flex items-center justify-center"
+                          className="w-10 h-10 rounded-full flex items-center justify-center"
                           style={{
                             backgroundColor: isDarkMode ? "#000" : "#fff",
                             border: "1.5px solid",
@@ -209,13 +209,13 @@ function Contact({ isDarkMode = true }) {
                           }}
                         >
                           <Mail
-                            size={20}
+                            size={18}
                             color={isDarkMode ? "#ffffff" : "#7c3aed"}
                           />
                         </div>
                         <div>
                           <p
-                            className={`text-sm ${
+                            className={`text-xs ${
                               isDarkMode
                                 ? "text-purple-100/80"
                                 : "text-purple-900/80"
@@ -224,7 +224,7 @@ function Contact({ isDarkMode = true }) {
                             Email
                           </p>
                           <p
-                            className={`font-medium ${
+                            className={`text-sm font-medium ${
                               isDarkMode ? "text-white" : "text-purple-900"
                             }`}
                           >
@@ -232,9 +232,9 @@ function Contact({ isDarkMode = true }) {
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-3">
                         <div
-                          className="w-12 h-12 rounded-full flex items-center justify-center"
+                          className="w-10 h-10 rounded-full flex items-center justify-center"
                           style={{
                             backgroundColor: isDarkMode ? "#000" : "#fff",
                             border: "1.5px solid",
@@ -245,13 +245,13 @@ function Contact({ isDarkMode = true }) {
                           }}
                         >
                           <MapPin
-                            size={20}
+                            size={18}
                             color={isDarkMode ? "#ffffff" : "#7c3aed"}
                           />
                         </div>
                         <div>
                           <p
-                            className={`text-sm ${
+                            className={`text-xs ${
                               isDarkMode
                                 ? "text-purple-100/80"
                                 : "text-purple-900/80"
@@ -260,7 +260,7 @@ function Contact({ isDarkMode = true }) {
                             Location
                           </p>
                           <p
-                            className={`font-medium ${
+                            className={`text-sm font-medium ${
                               isDarkMode ? "text-white" : "text-purple-900"
                             }`}
                           >
@@ -272,11 +272,11 @@ function Contact({ isDarkMode = true }) {
 
                     {/* Social Icons */}
                     <div
-                      className="mt-8 pt-6 border-t"
+                      className="mt-6 pt-4 border-t"
                       style={{ borderColor: "#8B5CF6" + "30" }}
                     >
                       <p
-                        className={`text-sm mb-4 ${
+                        className={`text-xs mb-3 ${
                           isDarkMode
                             ? "text-purple-100/80"
                             : "text-purple-900/80"
@@ -284,7 +284,7 @@ function Contact({ isDarkMode = true }) {
                       >
                         Follow me on
                       </p>
-                      <div className="flex space-x-4">
+                      <div className="flex space-x-3">
                         {[
                           {
                             url: "https://linkedin.com/in/vijaya-giduthuri",
@@ -307,7 +307,7 @@ function Contact({ isDarkMode = true }) {
                             href={social.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                            className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
                             style={{
                               backgroundColor: isDarkMode ? "#000" : "#fff",
                               border: "1.5px solid",
@@ -318,7 +318,7 @@ function Contact({ isDarkMode = true }) {
                             }}
                           >
                             {React.cloneElement(social.component, {
-                              size: 24,
+                              size: 20,
                               color: isDarkMode ? "#ffffff" : "#7c3aed",
                             })}
                           </a>
@@ -327,14 +327,14 @@ function Contact({ isDarkMode = true }) {
 
                       {/* Additional content to fill space */}
                       <div
-                        className="mt-6 pt-4"
+                        className="mt-4 pt-3"
                         style={{
                           borderTop: "1px solid",
                           borderColor: "#8B5CF6" + "20",
                         }}
                       >
                         <p
-                          className={`text-sm leading-relaxed ${
+                          className={`text-xs leading-relaxed ${
                             isDarkMode
                               ? "text-purple-200/70"
                               : "text-purple-700/70"
@@ -375,16 +375,16 @@ function Contact({ isDarkMode = true }) {
                       : `0 0 8px 2px #8B5CF620`;
                   }}
                 >
-                  <div className="p-6 pb-4">
+                  <div className="p-5 pb-3">
                     <h3
-                      className={`text-xl font-bold mb-6 ${
+                      className={`text-lg font-bold mb-4 ${
                         isDarkMode ? "text-white" : "text-purple-900"
                       }`}
                     >
                       Send a Message
                     </h3>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div className="space-y-4">
                         <div className="relative group">
                           <input
                             type="text"
@@ -393,7 +393,7 @@ function Contact({ isDarkMode = true }) {
                             onChange={handleInputChange}
                             placeholder="Your Name"
                             required
-                            className={`w-full px-4 py-3 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
+                            className={`w-full px-3 py-2 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
                               isDarkMode
                                 ? "bg-black/40 text-white placeholder-purple-300/60 border border-purple-500/30 hover:border-purple-400/50"
                                 : "bg-white/80 text-purple-900 placeholder-purple-700/60 border border-purple-300/50 hover:border-purple-500/50"
@@ -409,7 +409,7 @@ function Contact({ isDarkMode = true }) {
                             onChange={handleInputChange}
                             placeholder="Your Email"
                             required
-                            className={`w-full px-4 py-3 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
+                            className={`w-full px-3 py-2 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
                               isDarkMode
                                 ? "bg-black/40 text-white placeholder-purple-300/60 border border-purple-500/30 hover:border-purple-400/50"
                                 : "bg-white/80 text-purple-900 placeholder-purple-700/60 border border-purple-300/50 hover:border-purple-500/50"
@@ -425,7 +425,7 @@ function Contact({ isDarkMode = true }) {
                             onChange={handleInputChange}
                             placeholder="Subject"
                             required
-                            className={`w-full px-4 py-3 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
+                            className={`w-full px-3 py-2 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
                               isDarkMode
                                 ? "bg-black/40 text-white placeholder-purple-300/60 border border-purple-500/30 hover:border-purple-400/50"
                                 : "bg-white/80 text-purple-900 placeholder-purple-700/60 border border-purple-300/50 hover:border-purple-500/50"
@@ -439,9 +439,9 @@ function Contact({ isDarkMode = true }) {
                             value={formData.message}
                             onChange={handleInputChange}
                             placeholder="Your Message"
-                            rows={5}
+                            rows={4}
                             required
-                            className={`w-full px-4 py-3 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none ${
+                            className={`w-full px-3 py-2 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none ${
                               isDarkMode
                                 ? "bg-black/40 text-white placeholder-purple-300/60 border border-purple-500/30 hover:border-purple-400/50"
                                 : "bg-white/80 text-purple-900 placeholder-purple-700/60 border border-purple-300/50 hover:border-purple-500/50"
@@ -477,14 +477,14 @@ function Contact({ isDarkMode = true }) {
 
         {/* Footer */}
         <footer
-          className="text-center py-8 relative z-10"
+          className="text-center py-6 relative z-10"
           style={{
             borderTop: "1px solid",
             borderColor: "#8B5CF6" + "30",
             backgroundColor: isDarkMode ? "#0a051280" : "#ffffff80",
           }}
         >
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-5xl mx-auto px-6">
             <p
               className={`text-sm ${
                 isDarkMode ? "text-purple-200/80" : "text-purple-700/80"

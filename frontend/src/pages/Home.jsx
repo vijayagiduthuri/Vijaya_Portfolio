@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Sun, Moon, Github, Linkedin } from "lucide-react";
+import { Sun, Moon, Github, Linkedin, Code2 } from "lucide-react";
 import About from "./About";
 import Projects from "./Projects";
 import Skills from "./Skills";
@@ -234,10 +234,10 @@ function Home() {
                     letterSpacing: "0.5px",
                   }}
                 >
-                  AI & Data Science Student | MERN Stack Developer |
+                  AI & Data Science Student | Full Stack Developer | ML Enthusiast
                 </h3>
 
-                <h3
+                {/* <h3
                   className={`text-lg sm:text-xl md:text-2xl font-thin leading-snug text-center sm:text-left ${
                     isDarkMode ? "text-gray-300" : "text-purple-800"
                   }`}
@@ -248,7 +248,7 @@ function Home() {
                   }}
                 >
                   ML Enthusiast
-                </h3>
+                </h3> */}
 
                 <p
                   className={`text-base ${
@@ -283,6 +283,7 @@ function Home() {
                   {[
                     ["https://linkedin.com/in/vijaya-giduthuri", <Linkedin />],
                     ["https://github.com/vijayagiduthuri", <Github />],
+                    ["https://leetcode.com/u/KkLrxuDp1n/", <Code2 />],
                   ].map(([url, Icon], i) => (
                     <a
                       key={i}
