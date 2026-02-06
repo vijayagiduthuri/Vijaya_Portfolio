@@ -5,7 +5,7 @@ const skillsData = {
   "Programming Languages": {
     iconComponent: Code,
     gradient: "from-blue-400 to-blue-700",
-    skills: ["C", "Java", "Python", "JavaScript"],
+    skills: ["C", "Java", "Python", "JavaScript", "TypeScript"],
     color: "#3B82F6",
   },
   "Frontend Technologies": {
@@ -23,7 +23,7 @@ const skillsData = {
   Databases: {
     iconComponent: Database,
     gradient: "from-orange-400 to-orange-700",
-    skills: ["MongoDB", "MySQL"],
+    skills: ["MongoDB", "MySQL", "PostgreSQL"],
     color: "#F97316",
   },
   "Developer Tools": {
@@ -35,7 +35,7 @@ const skillsData = {
   "Machine Learning": {
     iconComponent: Brain,
     gradient: "from-cyan-400 to-cyan-700",
-    skills: ["Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
+    skills: ["Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
     color: "#06B6D4",
   },
 };

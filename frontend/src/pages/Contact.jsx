@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
+import { Linkedin, Github, Mail, Phone, MapPin, Code2 } from "lucide-react";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 function Contact({ isDarkMode = true }) {
   // Fixed dark theme to match your design
@@ -20,21 +21,56 @@ function Contact({ isDarkMode = true }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const toastId = toast.loading("Sending your message...");
+    
     try {
       await axios.post(
-        "https://vijaya-portfolio.onrender.com/api/send-email",
+        "http://localhost:9000/api/send-email",
         formData
       );
-      alert("Message sent successfully!");
+      toast.success("Message sent successfully!", { id: toastId });
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("Failed to send message. Try again later.");
+      toast.error("Failed to send message. Please try again.", { id: toastId });
     }
   };
 
   return (
     <>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: isDarkMode ? '#1a0d2e' : '#fff',
+            color: isDarkMode ? '#fff' : '#333',
+            border: '1.5px solid #8B5CF6',
+            borderRadius: '12px',
+            padding: '16px',
+            boxShadow: '0 0 12px 4px rgba(139, 92, 246, 0.3)',
+          },
+          success: {
+            iconTheme: {
+              primary: '#8B5CF6',
+              secondary: '#fff',
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: '#ef4444',
+              secondary: '#fff',
+            },
+          },
+          loading: {
+            iconTheme: {
+              primary: '#8B5CF6',
+              secondary: '#fff',
+            },
+          },
+        }}
+      />
       <div
         className="min-h-screen transition-all duration-500"
         style={{
@@ -259,6 +295,11 @@ function Contact({ isDarkMode = true }) {
                             url: "https://github.com/vijayagiduthuri",
                             icon: "github",
                             component: <Github key="github" />,
+                          },
+                          {
+                            url: "https://leetcode.com/u/KkLrxuDp1n/",
+                            icon: "leetcode",
+                            component: <Code2 key="leetcode" />,
                           },
                         ].map((social, i) => (
                           <a

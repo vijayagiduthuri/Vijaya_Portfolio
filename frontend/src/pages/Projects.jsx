@@ -6,9 +6,35 @@ import {
   Zap,
   Cloud,
   ShoppingCart,
+  Key,
+  Flag,
 } from "lucide-react";
 
 const projects = [
+  {
+    title: "Online E-Auction System",
+    subtitle: "Quantum Key Distribution Security",
+    description:
+      "Developed a secure e-auction platform using BB84 Quantum Key Distribution for encrypted bid amounts. Features simulated quantum key exchange with robustness against classical and quantum cyberattacks, ensuring end-to-end data confidentiality.",
+    tech: ["Quantum Simulation", "FastAPI", "MongoDB", "Express", "React", "Node.js"],
+    githubLink: "https://github.com/vijayagiduthuri/QKD",
+    liveLink: "#",
+    icon: <Key size={24} />,
+    gradient: "from-indigo-400 to-purple-700",
+    hasLiveDemo: false,
+  },
+  {
+    title: "Civic Issues Reporting System",
+    subtitle: "Smart City Platform",
+    description:
+      "Created a civic-tech platform for real-time public issue reporting with geolocation tagging. Implemented ML-driven automatic issue routing, admin portal for task assignment, and dedicated apps for users, technicians, and administrators.",
+    tech: ["React.js", "Node.js", "Express.js", "PostgreSQL", "Supabase", "Machine Learning"],
+    githubLink: "https://github.com/vijayagiduthuri/Civic-app",
+    liveLink: "#",
+    icon: <Flag size={24} />,
+    gradient: "from-emerald-400 to-cyan-600",
+    hasLiveDemo: false,
+  },
   {
     title: "Talkify",
     subtitle: "MERN Stack Real-Time Chat App",
