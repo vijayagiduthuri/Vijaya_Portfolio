@@ -25,7 +25,7 @@ function Contact({ isDarkMode = true }) {
     
     try {
       await axios.post(
-        "http://localhost:9000/api/send-email",
+        "https://vijaya-portfolio.onrender.com/api/send-email",
         formData
       );
       toast.success("Message sent successfully!", { id: toastId });
