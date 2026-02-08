@@ -104,7 +104,7 @@ function Projects({ isDarkMode = true }) {
           : "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%)",
       }}
     >
-      <section id="projects" className="py-16 px-6 relative">
+      <section id="projects" className="py-12 px-6 relative">
         {/* Enhanced Background Effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div
@@ -185,7 +185,7 @@ function Projects({ isDarkMode = true }) {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, idx) => (
               <div
                 key={idx}
@@ -212,16 +212,16 @@ function Projects({ isDarkMode = true }) {
                 }}
               >
                 {/* Project Header */}
-                <div className="p-6 pb-4">
-                  <div className="flex items-start justify-between mb-4">
+                <div className="p-4 pb-3">
+                  <div className="flex items-start justify-between mb-3">
                     <div
-                      className={`p-3 rounded-2xl bg-gradient-to-br ${project.gradient} shadow-lg`}
+                      className={`p-2 rounded-2xl bg-gradient-to-br ${project.gradient} shadow-lg`}
                     >
                       <div className="text-white">{project.icon}</div>
                     </div>
 
                     {/* Action Icons */}
-                    <div className="flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                    <div className="flex space-x-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 translate-y-0 md:translate-y-2 md:group-hover:translate-y-0">
                       <a
                         href={project.githubLink}
                         target="_blank"
@@ -255,16 +255,16 @@ function Projects({ isDarkMode = true }) {
                   </div>
 
                   {/* Project Title & Subtitle */}
-                  <div className="mb-3">
+                  <div className="mb-2">
                     <h3
-                      className={`text-xl font-bold mb-1 ${
+                      className={`text-lg font-bold mb-1 ${
                         isDarkMode ? "text-white" : "text-purple-900"
                       }`}
                     >
                       {project.title}
                     </h3>
                     <p
-                      className={`text-sm font-medium ${
+                      className={`text-xs font-medium ${
                         isDarkMode ? "text-purple-300" : "text-purple-600"
                       }`}
                     >
@@ -274,7 +274,7 @@ function Projects({ isDarkMode = true }) {
 
                   {/* Project Description */}
                   <p
-                    className={`text-sm leading-relaxed mb-4 ${
+                    className={`text-xs leading-relaxed mb-3 ${
                       isDarkMode ? "text-purple-100/80" : "text-purple-900/80"
                     }`}
                   >
@@ -283,7 +283,7 @@ function Projects({ isDarkMode = true }) {
                 </div>
 
                 {/* Tech Stack */}
-                <div className="px-6 pb-6">
+                <div className="px-4 pb-4">
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIdx) => (
                       <span

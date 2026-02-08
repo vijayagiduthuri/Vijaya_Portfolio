@@ -766,7 +766,7 @@ function About({ isDarkMode = true }) {
   const handleDownloadResume = () => {
     // This will download the resume from the public folder
     const link = document.createElement("a");
-    link.href = "/Resume2.pdf"; // Assuming you'll place your resume as resume.pdf in public folder
+    link.href = "/Vijaya_FullStackDeveloper.pdf"; // Assuming you'll place your resume as resume.pdf in public folder
     link.download = "Vijaya_Giduthuri_Resume.pdf";
     document.body.appendChild(link);
     link.click();
@@ -928,9 +928,9 @@ function About({ isDarkMode = true }) {
             </div>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center px-2">
             <div
-              className={`relative flex p-0.5 rounded-xl mb-6 w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl${
+              className={`relative flex p-0.5 rounded-xl mb-6 w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl ${
                 isDarkMode
                   ? "bg-gray-800/90 border border-gray-700/50 backdrop-blur-xl"
                   : "bg-white/90 border border-gray-200/50 shadow-xl backdrop-blur-xl"
@@ -954,7 +954,7 @@ function About({ isDarkMode = true }) {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`relative flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 flex-1 ${
+                  className={`relative flex items-center justify-center gap-1 px-2 sm:px-4 md:px-6 py-2 sm:py-2.5 rounded-lg text-sm font-medium transition-all duration-300 flex-1 min-w-0 ${
                     activeTab === tab.id
                       ? "text-white transform scale-105"
                       : isDarkMode
@@ -962,8 +962,8 @@ function About({ isDarkMode = true }) {
                       : "text-gray-600 hover:text-gray-900 hover:scale-102"
                   }`}
                 >
-                  <span className="text-base">{tab.icon}</span>
-                  <span className="text-[10px] sm:text-xs text-center break-words leading-tight">
+                  <span className="text-sm sm:text-base">{tab.icon}</span>
+                  <span className="text-[9px] sm:text-xs md:text-sm text-center whitespace-nowrap overflow-hidden text-ellipsis leading-tight">
                     {tab.label}
                   </span>
                 </button>
@@ -1266,7 +1266,7 @@ function About({ isDarkMode = true }) {
                   }}
                 >
                   <iframe
-                    src="/Resume2.pdf"
+                    src="/Vijaya_FullStackDeveloper.pdf"
                     className="w-full h-full"
                     title="Resume Preview"
                     style={{
@@ -1393,7 +1393,7 @@ function About({ isDarkMode = true }) {
               <div className="flex-1 overflow-hidden">
                 <div className="h-full overflow-auto">
                   <iframe
-                    src="/Resume2.pdf"
+                    src="/Vijaya_FullStackDeveloper.pdf"
                     className="w-full min-h-full"
                     title="Resume Preview"
                     style={{

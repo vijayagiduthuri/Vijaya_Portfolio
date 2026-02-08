@@ -255,7 +255,7 @@ function Home() {
                     isDarkMode ? "text-purple-100/80" : "text-purple-900/80"
                   }`}
                 >
-                  I'm passionate about building scalable web apps using the MERN
+                  I'm passionate about building scalable web apps using the Full
                   stack and exploring machine learning to solve real-world
                   problems.
                 </p>
@@ -281,7 +281,7 @@ function Home() {
                 {/* Social Icons */}
                 <div className="flex space-x-4">
                   {[
-                    ["https://linkedin.com/in/vijaya-giduthuri", <Linkedin />],
+                    ["https://www.linkedin.com/in/vijaya-giduthuri-990aa22bb/", <Linkedin />],
                     ["https://github.com/vijayagiduthuri", <Github />],
                     ["https://leetcode.com/u/KkLrxuDp1n/", <Code2 />],
                   ].map(([url, Icon], i) => (

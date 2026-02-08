@@ -124,10 +124,10 @@ function Skills({ isDarkMode = true }) {
         />
       </div>
 
-      <section id="skills" className="py-16 px-6 relative z-10">
+      <section id="skills" className="py-12 px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2
               className={`mt-6 text-3xl md:text-4xl font-bold mb-2 ${
                 isDarkMode ? "text-transparent" : "text-purple-900"
@@ -163,7 +163,7 @@ function Skills({ isDarkMode = true }) {
           </div>
 
           {/* Skills Categories Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Object.entries(skillsData).map(
               ([category, data], categoryIndex) => {
                 const IconComponent = data.iconComponent;
@@ -199,18 +199,18 @@ function Skills({ isDarkMode = true }) {
                     }}
                   >
                     {/* Category Header */}
-                    <div className="p-6 pb-4">
-                      <div className="flex items-center mb-4">
+                    <div className="p-6 pb-5">
+                      <div className="flex items-center mb-5">
                         <div
-                          className={`p-3 rounded-2xl bg-gradient-to-br ${data.gradient} shadow-lg mr-4 group-hover:scale-110 transition-transform duration-300`}
+                          className={`p-2 rounded-2xl bg-gradient-to-br ${data.gradient} shadow-lg mr-3 group-hover:scale-110 transition-transform duration-300`}
                         >
                           <div className="text-white">
-                            <IconComponent size={24} />
+                            <IconComponent size={20} />
                           </div>
                         </div>
                         <div className="flex-1">
                           <h3
-                            className={`text-xl font-bold ${
+                            className={`text-lg font-bold ${
                               isDarkMode ? "text-white" : "text-purple-900"
                             }`}
                           >
@@ -228,7 +228,7 @@ function Skills({ isDarkMode = true }) {
 
                       {/* Skills Description */}
                       <p
-                        className={`text-sm mb-4 ${
+                        className={`text-xs mb-5 ${
                           isDarkMode
                             ? "text-purple-100/80"
                             : "text-purple-900/80"

@@ -287,7 +287,7 @@ function Contact({ isDarkMode = true }) {
                       <div className="flex space-x-3">
                         {[
                           {
-                            url: "https://linkedin.com/in/vijaya-giduthuri",
+                            url: "https://www.linkedin.com/in/vijaya-giduthuri-990aa22bb/",
                             icon: "linkedin",
                             component: <Linkedin key="linkedin" />,
                           },
